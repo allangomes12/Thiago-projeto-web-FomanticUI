@@ -1,0 +1,65 @@
+<div class="ui clearing basic segment">
+  <h1 class="ui left floated header">
+    <i class="film icon"></i>
+    <div class="content">
+      {{filme.nome}}
+      <div class="sub header">{{filme.ano}}</div>
+    </div>
+  </h1>
+  <a class="ui basic green right floated button" href="/filmes"><i class="arrow left icon"></i> Voltar</a>
+</div>
+
+<div class="ui stackable two column grid">
+  <div class="column">
+    <div class="ui segment">
+      <h3 class="ui header"><i class="video icon"></i><div class="content">Diretor</div></h3>
+      {{#if filme.diretor}}
+        <a href="/diretores/{{filme.diretor.id}}">{{filme.diretor.nome}}</a>
+        <div class="ui list">
+          <div class="item">Nascimento: {{filme.diretor.anoNascimento}}</div>
+          <div class="item">Nacionalidade: {{filme.diretor.nacionalidade}}</div>
+        </div>
+      {{else}}
+        <p>Nenhum diretor informado.</p>
+      {{/if}}
+    </div>
+
+    <div class="ui segment">
+      <h3 class="ui header"><i class="users icon"></i><div class="content">Artistas</div></h3>
+      {{#if filme.artistas}}
+        <div class="ui relaxed divided list">
+          {{#each filme.artistas}}
+            <div class="item">
+              <div class="content">
+                <a class="header" href="/artistas/{{this.id}}">{{this.nome}}</a>
+                <div class="description">{{this.anoNascimento}}</div>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      {{else}}
+        <p>Nenhum artista cadastrado.</p>
+      {{/if}}
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="ui segment">
+      <h3 class="ui header"><i class="clipboard list icon"></i><div class="content">Ficha técnica</div></h3>
+      {{#if filme.fichaTecnica}}
+        <table class="ui definition table">
+          <tbody>
+            <tr><td>Duração</td><td>{{filme.fichaTecnica.duracaoMinutos}} minutos</td></tr>
+            <tr><td>Orçamento</td><td>{{filme.fichaTecnica.orcamento}}</td></tr>
+            <tr><td>Bilheteria</td><td>{{filme.fichaTecnica.bilheteria}}</td></tr>
+          </tbody>
+        </table>
+      {{else}}
+        <p>Este filme ainda não tem ficha técnica.</p>
+        <a class="ui green button" href="/filmes/{{filme.id}}/ficha-tecnica/cadastrar">
+          <i class="plus icon"></i> Cadastrar ficha técnica
+        </a>
+      {{/if}}
+    </div>
+  </div>
+</div>

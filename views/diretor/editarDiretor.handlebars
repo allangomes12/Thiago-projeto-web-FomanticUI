@@ -1,0 +1,23 @@
+<h1 class="ui header"><i class="edit icon"></i><div class="content">Editar diretor</div></h1>
+
+<div class="ui segment">
+  <form class="ui form" action="/diretores/{{diretor.id}}?_method=PUT" method="POST">
+    <div class="field">
+      <label>Nome do diretor</label>
+      <input type="text" name="nome" value="{{diretor.nome}}">
+    </div>
+
+    <div class="field">
+      <label>Ano de nascimento</label>
+      <input type="number" name="anoNascimento" value="{{diretor.anoNascimento}}">
+    </div>
+
+    <div class="field">
+      <label>Nacionalidade</label>
+      <input type="text" name="nacionalidade" value="{{diretor.nacionalidade}}">
+    </div>
+
+    <button class="ui green button" type="submit"><i class="save icon"></i> Salvar alterações</button>
+    <a class="ui basic button" href="/diretores">Cancelar</a>
+  </form>
+</div>

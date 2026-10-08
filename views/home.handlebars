@@ -1,15 +1,28 @@
-<h1>{{titulo}}</h1>
+<h1 class="ui header">
+  <i class="home icon"></i>
+  <div class="content">
+    {{titulo}}
+    <div class="sub header">Bem-vindo ao sistema de filmes.</div>
+  </div>
+</h1>
 
-<p>Bem-vindo ao sistema de filmes.</p>
-
-<a href="/filmes">
-  Filmes
-</a><br>
-
-<a href="/diretores">
-  Diretores
-</a><br>
-
-<a href="/artistas">
-  Artistas
-</a><br>
+<div class="ui three stackable cards">
+  <a class="card" href="/filmes">
+    <div class="content">
+      <div class="header"><i class="film icon"></i> Filmes</div>
+      <div class="description">Cadastre filmes, escolha o diretor e o elenco.</div>
+    </div>
+  </a>
+  <a class="card" href="/diretores">
+    <div class="content">
+      <div class="header"><i class="video icon"></i> Diretores</div>
+      <div class="description">Veja os diretores e os filmes de cada um.</div>
+    </div>
+  </a>
+  <a class="card" href="/artistas">
+    <div class="content">
+      <div class="header"><i class="users icon"></i> Artistas</div>
+      <div class="description">Consulte atores e atrizes e onde eles atuaram.</div>
+    </div>
+  </a>
+</div>

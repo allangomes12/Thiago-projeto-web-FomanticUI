@@ -1,0 +1,37 @@
+<div class="ui clearing basic segment">
+  <h1 class="ui left floated header">
+    <i class="video icon"></i>
+    <div class="content">
+      Diretores
+      <div class="sub header">Lista de diretores cadastrados</div>
+    </div>
+  </h1>
+  <a class="ui green right floated button" href="/diretores/cadastrar">
+    <i class="plus icon"></i> Cadastrar diretor
+  </a>
+</div>
+
+<div class="ui segment">
+  <div class="ui very relaxed divided middle aligned list">
+    {{#each diretores}}
+      <div class="item">
+        <div class="right floated content">
+          <a class="ui icon basic green button" href="/diretores/{{this.id}}/editar" title="Editar">
+            <i class="edit icon"></i>
+          </a>
+          <form class="form-inline" action="/diretores/{{this.id}}?_method=DELETE" method="POST" onsubmit="return confirm('Excluir este diretor?');">
+            <button class="ui icon basic red button" type="submit" title="Excluir">
+              <i class="trash icon"></i>
+            </button>
+          </form>
+        </div>
+        <div class="content">
+          <a class="header" href="/diretores/{{this.id}}">{{this.nome}}</a>
+          <div class="description">{{this.anoNascimento}} - {{this.nacionalidade}}</div>
+        </div>
+      </div>
+    {{else}}
+      <div class="item"><div class="content">Nenhum diretor cadastrado ainda.</div></div>
+    {{/each}}
+  </div>
+</div>

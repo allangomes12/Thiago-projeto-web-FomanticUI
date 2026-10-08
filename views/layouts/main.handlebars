@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{#if titulo}}{{titulo}} - {{/if}}Sistema de Filmes</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.3/dist/semantic.min.css">
+  <link rel="stylesheet" href="/css/estilo.css">
+</head>
+<body>
+
+  <div class="ui stackable inverted borderless menu site-menu">
+    <div class="ui container">
+      <a class="header item" href="/"><i class="film icon"></i> Sistema de Filmes</a>
+      <a class="item" href="/filmes">Filmes</a>
+      <a class="item" href="/diretores">Diretores</a>
+      <a class="item" href="/artistas">Artistas</a>
+    </div>
+  </div>
+
+  <main class="ui container pagina">
+    {{{body}}}
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.3/dist/semantic.min.js"></script>
+  <script>
+    $('select.dropdown').dropdown();
+    $('.ui.checkbox').checkbox();
+  </script>
+</body>
+</html>

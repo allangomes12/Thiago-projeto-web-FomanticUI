@@ -1,0 +1,30 @@
+<h1 class="ui header">
+  <i class="clipboard list icon"></i>
+  <div class="content">
+    Ficha técnica
+    <div class="sub header">{{filme.nome}}</div>
+  </div>
+</h1>
+
+<div class="ui segment">
+  <form class="ui form" action="/filmes/{{filme.id}}/ficha-tecnica" method="POST">
+    <div class="field">
+      <label>Duração (minutos)</label>
+      <input type="number" name="duracaoMinutos">
+    </div>
+
+    <div class="two fields">
+      <div class="field">
+        <label>Orçamento</label>
+        <input type="number" step="0.01" name="orcamento">
+      </div>
+      <div class="field">
+        <label>Bilheteria</label>
+        <input type="number" step="0.01" name="bilheteria">
+      </div>
+    </div>
+
+    <button class="ui green button" type="submit"><i class="save icon"></i> Salvar</button>
+    <a class="ui basic button" href="/filmes/{{filme.id}}">Cancelar</a>
+  </form>
+</div>

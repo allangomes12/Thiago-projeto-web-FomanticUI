@@ -1,0 +1,89 @@
+:root {
+  --verde: #2e7d32;
+  --verde-escuro: #1b5e20;
+  --verde-medio: #66bb6a;
+  --verde-claro: #eef7ee;
+}
+
+body {
+  background: var(--verde-claro);
+}
+
+a {
+  color: var(--verde);
+}
+
+a:hover {
+  color: var(--verde-escuro);
+}
+
+/* Menu superior */
+.ui.menu.site-menu {
+  background: var(--verde-escuro);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 2em;
+}
+
+.ui.menu.site-menu .item:hover {
+  background: var(--verde);
+}
+
+/* Conteúdo */
+.pagina {
+  padding-bottom: 3em;
+}
+
+.ui.header,
+.ui.form .field > label {
+  color: var(--verde-escuro);
+}
+
+.ui.segment {
+  border-top: 3px solid var(--verde);
+}
+
+/* Botões verdes */
+.ui.green.button {
+  background: var(--verde);
+}
+
+.ui.green.button:hover,
+.ui.green.button:focus {
+  background: var(--verde-escuro);
+}
+
+.ui.basic.green.button {
+  color: var(--verde) !important;
+  box-shadow: 0 0 0 1px var(--verde) inset !important;
+  background: transparent;
+}
+
+.ui.basic.green.button:hover {
+  color: #fff !important;
+  background: var(--verde) !important;
+}
+
+/* Formulários */
+.ui.form input:focus,
+.ui.form select:focus,
+.ui.selection.dropdown:focus,
+.ui.selection.active.dropdown {
+  border-color: var(--verde-medio);
+}
+
+.ui.checkbox input:checked ~ label::after {
+  color: var(--verde);
+}
+
+.ui.label.green,
+.ui.green.label {
+  background: var(--verde);
+}
+
+/* Botão de excluir dentro de lista */
+.form-inline {
+  display: inline-block;
+  margin: 0;
+}

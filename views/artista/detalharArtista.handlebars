@@ -1,0 +1,56 @@
+<div class="ui clearing basic segment">
+  <h1 class="ui left floated header">
+    <i class="user icon"></i>
+    <div class="content">
+      {{artista.nome}}
+      {{#if artista.nomeArtistico}}<div class="sub header">{{artista.nomeArtistico}}</div>{{/if}}
+    </div>
+  </h1>
+  <a class="ui basic green right floated button" href="/artistas"><i class="arrow left icon"></i> Voltar</a>
+</div>
+
+<div class="ui stackable grid">
+  {{#if artista.foto}}
+    <div class="four wide column">
+      <img class="ui rounded fluid image" src="{{artista.foto}}" alt="Foto de {{artista.nome}}">
+    </div>
+  {{/if}}
+
+  <div class="{{#if artista.foto}}twelve{{else}}sixteen{{/if}} wide column">
+    <div class="ui segment">
+      <table class="ui definition table">
+        <tbody>
+          <tr><td>Ano de nascimento</td><td>{{artista.anoNascimento}}</td></tr>
+          <tr>
+            <td>Em atividade</td>
+            <td>
+              {{#if artista.emAtividade}}
+                <span class="ui green label">Sim</span>
+              {{else}}
+                <span class="ui label">Não</span>
+              {{/if}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ui segment">
+      <h3 class="ui header"><i class="film icon"></i><div class="content">Filmes</div></h3>
+      {{#if artista.filmes}}
+        <div class="ui relaxed divided list">
+          {{#each artista.filmes}}
+            <div class="item">
+              <div class="content">
+                <a class="header" href="/filmes/{{this.id}}">{{this.nome}}</a>
+                <div class="description">{{this.ano}}</div>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      {{else}}
+        <p>Nenhum filme cadastrado para este artista.</p>
+      {{/if}}
+    </div>
+  </div>
+</div>

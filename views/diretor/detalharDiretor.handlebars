@@ -1,0 +1,37 @@
+<div class="ui clearing basic segment">
+  <h1 class="ui left floated header">
+    <i class="video icon"></i>
+    <div class="content">
+      {{diretor.nome}}
+      <div class="sub header">Diretor</div>
+    </div>
+  </h1>
+  <a class="ui basic green right floated button" href="/diretores"><i class="arrow left icon"></i> Voltar</a>
+</div>
+
+<div class="ui segment">
+  <table class="ui definition table">
+    <tbody>
+      <tr><td>Ano de nascimento</td><td>{{diretor.anoNascimento}}</td></tr>
+      <tr><td>Nacionalidade</td><td>{{diretor.nacionalidade}}</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="ui segment">
+  <h3 class="ui header"><i class="film icon"></i><div class="content">Filmes</div></h3>
+  {{#if diretor.filmes}}
+    <div class="ui relaxed divided list">
+      {{#each diretor.filmes}}
+        <div class="item">
+          <div class="content">
+            <a class="header" href="/filmes/{{this.id}}">{{this.nome}}</a>
+            <div class="description">{{this.ano}}</div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  {{else}}
+    <p>Nenhum filme cadastrado para este diretor.</p>
+  {{/if}}
+</div>

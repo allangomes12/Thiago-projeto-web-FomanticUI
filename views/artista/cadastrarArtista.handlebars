@@ -1,0 +1,45 @@
+<h1 class="ui header"><i class="users icon"></i><div class="content">Cadastrar artista</div></h1>
+
+<div class="ui segment">
+  <form class="ui form" action="/artistas" method="POST">
+    <div class="field">
+      <label>Nome do artista</label>
+      <input type="text" name="nome">
+    </div>
+
+    <div class="two fields">
+      <div class="field">
+        <label>Ano de nascimento</label>
+        <input type="number" name="anoNascimento">
+      </div>
+      <div class="field">
+        <label>Nome artístico</label>
+        <input type="text" name="nomeArtistico">
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="ui checkbox">
+        <input type="checkbox" name="emAtividade">
+        <label>Em atividade</label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Foto (endereço da imagem)</label>
+      <input type="text" name="foto">
+    </div>
+
+    <div class="field">
+      <label>Filmes</label>
+      <select class="ui fluid dropdown" name="filmes" multiple>
+        {{#each filmes}}
+          <option value="{{this.id}}">{{this.nome}}</option>
+        {{/each}}
+      </select>
+    </div>
+
+    <button class="ui green button" type="submit"><i class="save icon"></i> Cadastrar</button>
+    <a class="ui basic button" href="/artistas">Cancelar</a>
+  </form>
+</div>
